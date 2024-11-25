@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: #f4f4f4;
+    padding: 10px 0;
+}
+
+.menu button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menu button:hover {
+    background-color: #0056b3;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+}
+
+.content.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+#studentList {
+    list-style: none;
+    padding: 0;
+}
+
+#studentList li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

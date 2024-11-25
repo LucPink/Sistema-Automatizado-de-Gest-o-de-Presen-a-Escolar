@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sistema de Gestão de Presença</title>
+<style>
+/* Estilos globais */
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #f4f4f9;
+}
+header { 
+    background-color: #4CAF50; 
+    color: white; 
+    text-align: center; 
+    padding: 1em 0; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Menu de navegação */
+nav { 
+    display: flex; 
+    justify-content: center; 
+    background-color: #007bff; 
+    padding: 10px 0; 
+}
+nav button { 
+    background-color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    margin: 0 10px; 
+    border-radius: 20px; 
+    color: #007bff; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+nav button:hover { 
+    background-color: #0056b3; 
+    color: white; 
+}
+
+/* Conteúdo das seções */
+section { 
+    display: none; 
+    margin: 20px auto; 
+    max-width: 800px; 
+    background-color: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+section h2 { 
+    text-align: center; 
+    color: #333; 
+    margin-bottom: 20px; 
+}
+section ul { 
+    list-style: none; 
+    padding: 0; 
+}
+
+/* Gráfico */
+canvas {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sistema de Gestão de Presença</h1>
+</header>
+
+<nav>
+  <button onclick="showSection('inicio')">Início</button>
+  <button onclick="showSection('presenca')">Lançar Presença/Ausência</button>
+  <button onclick="showSection('aluno')">Aluno</button>
+</nav>
+
+<section id="inicio">
+  <h2>Início</h2>
+  <p>Bem-vindo ao Sistema de Gestão de Presença! Abaixo você pode visualizar a média de presenças, ausências e justificativas dos alunos:</p>
+  <canvas id="attendanceChart"></canvas>
+</section>
+
+<section id="presenca">
+  <h2>Lançar Presença/Ausência</h2>
+  <form id="attendanceForm">
+    <ul id="studentList" class="attendance-list"></ul>
+    <button type="button" onclick="submitAttendance()" class="submit-btn">Enviar</button>
+  </form>
+</section>
+
+
+<section id="aluno">
+  <h2>Aluno</h2>
+  <ul id="studentListAluno"></ul>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
